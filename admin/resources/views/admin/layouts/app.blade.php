@@ -15,8 +15,7 @@
 
         <div id="app-content">
             <div class="app-content-area">
-                <div class="bg-primary pt-10 pb-21 mt-n6 mx-n4"></div>
-                <div class="container-fluid mt-n22">
+                <div class="container-fluid">
                     @yield('main')
                 </div>
             </div>

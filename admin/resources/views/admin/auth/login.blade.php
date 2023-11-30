@@ -16,8 +16,9 @@ Login
         <!-- Card body -->
         <div class="card-body p-6">
             <div class="mb-4">
-                <a href="../index.html"><img src="../assets/images/brand/logo/logo-2.svg" class="mb-2 text-inverse"
-                        alt="Image" /></a>
+                <a href="../index.html">
+                    <img src="../assets/images/brand/logo/logo-2.svg" class="mb-2 text-inverse" alt="Image" />
+                </a>
                 <p class="mb-6">Please enter your user information.</p>
             </div>
             <!-- Form -->

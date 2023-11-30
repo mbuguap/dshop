@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\Auth\AdminLoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,5 +14,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
         Route::get('logout', 'adminLogout')->name('logout');
     });
 
-
+    Route::controller(AdminDashboardController::class)->group(function () {
+        Route::get('/', 'dashboard')->name('dashboard');
+    });
 });
