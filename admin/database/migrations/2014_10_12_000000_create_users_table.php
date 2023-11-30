@@ -18,6 +18,22 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('forget_password_token')->nullable();
+            $table->integer('status')->default(0);
+            $table->string('provider_id')->nullable();
+            $table->string('provider')->nullable();
+            $table->string('provider_avatar')->nullable();
+            $table->string('image')->nullable();
+            $table->string('phone')->nullable();
+            $table->integer('country_id')->default(0);
+            $table->integer('state_id')->default(0);
+            $table->integer('city_id')->default(0);
+            $table->string('zip_code')->nullable();
+            $table->string('address')->nullable();
+            $table->integer('is_vendor')->default(0);
+            $table->string('verify_token')->nullable();
+            $table->integer('email_verified')->default(0);
+            $table->integer('agree_policy')->default(0);            
             $table->timestamps();
         });
     }
