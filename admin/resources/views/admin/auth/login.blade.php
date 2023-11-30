@@ -21,20 +21,23 @@ Login
                 <p class="mb-6">Please enter your user information.</p>
             </div>
             <!-- Form -->
-            <form>
-                <!-- Username -->
+            <form action="{{ route('admin.store.login') }}" method="POST">
+
+                @csrf
+
+
                 <div class="mb-3">
-                    <label for="email" class="form-label">Username or email</label>
+                    <label for="email" class="form-label">Email</label>
                     <input type="email" id="email" class="form-control" name="email" placeholder="Email address here"
                         required="" />
                 </div>
-                <!-- Password -->
+
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" id="password" class="form-control" name="password"
                         placeholder="**************" required="" />
                 </div>
-                <!-- Checkbox -->
+
                 <div class="d-lg-flex justify-content-between align-items-center mb-4">
                     <div class="form-check custom-checkbox">
                         <input type="checkbox" class="form-check-input" id="rememberme" />
@@ -50,9 +53,7 @@ Login
                     </div>
 
                     <div class="d-md-flex justify-content-between mt-4">
-                        <div class="mb-2 mb-md-0">
-                            <a href="sign-up.html" class="fs-5">Create An Account </a>
-                        </div>
+
                         <div>
                             <a href="forget-password.html" class="text-inherit fs-5">Forgot your password?</a>
                         </div>
