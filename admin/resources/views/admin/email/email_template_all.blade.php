@@ -41,12 +41,13 @@ All Email Templates
 
                                 @foreach($templates as $key => $item)
                                 <tr>
-                                  
+
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->subject }}</td>
-                                   
+
                                     <td>
+
                                         <a href="#!" class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                             data-template="eyeTwo">
                                             <i data-feather="eye" class="icon-xs"></i>
@@ -54,20 +55,25 @@ All Email Templates
                                                 <span>View</span>
                                             </div>
                                         </a>
-                                        <a href="#!" class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
+
+                                        <a href="{{ route('admin.edit.email.template',$item->id) }}"
+                                            class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                             data-template="edit">
                                             <i data-feather="edit" class="icon-xs"></i>
                                             <div id="edit" class="d-none">
                                                 <span>Edit</span>
                                             </div>
                                         </a>
-                                        <a href="#!" class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
+
+                                        <a href="{{ route('admin.delete.email.template',$item->id) }}"
+                                            class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                             data-template="trashTwo">
                                             <i data-feather="trash-2" class="icon-xs"></i>
                                             <div id="trashTwo" class="d-none">
                                                 <span>Delete</span>
                                             </div>
                                         </a>
+
                                     </td>
                                 </tr>
                                 @endforeach
