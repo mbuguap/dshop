@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\Auth\AdminForgotPasswordController;
 use App\Http\Controllers\Admin\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\EmailConfigurationController;
 use App\Http\Controllers\Admin\EmailTemplateController;
@@ -40,5 +41,12 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
         Route::get('delete-email-template/{id}', 'delete')->name('delete.email.template');
     });
 
+    Route::controller(AdminForgotPasswordController::class)->group(function () {
+        Route::get('forget-password', 'forgetPassword')->name('forget.password');
+        Route::post('send-forget-password', 'sendForgetEmail')->name('send.forget.password');
+        Route::get('reset-password/{token}', 'resetPassword')->name('reset.password');
+        Route::post('password-store/{token}', 'storeResetData')->name('store.reset.password');
+    });
 
+    
 });

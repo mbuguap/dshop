@@ -1,7 +1,7 @@
 @extends('admin.layouts.auth')
 
 @section('title')
-Login
+Forgot Password
 @endsection
 
 @section('auth')
@@ -19,10 +19,10 @@ Login
                 <a href="../index.html">
                     <img src="../assets/images/brand/logo/logo-2.svg" class="mb-2 text-inverse" alt="Image" />
                 </a>
-                <p class="mb-6">Please enter your user information.</p>
+                <p class="mb-6">Forgot Password</p>
             </div>
             <!-- Form -->
-            <form action="{{ route('admin.store.login') }}" method="POST">
+            <form action="{{ route('admin.send.forget.password') }}" method="POST">
 
                 @csrf
 
@@ -33,30 +33,19 @@ Login
                         required="" />
                 </div>
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" class="form-control" name="password"
-                        placeholder="**************" required="" />
-                </div>
 
-                <div class="d-lg-flex justify-content-between align-items-center mb-4">
-                    <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" id="rememberme" />
-                        <label class="form-check-label" for="rememberme">Remember me</label>
-                    </div>
-                </div>
                 <div>
                     <!-- Button -->
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">
-                            Sign in
+                            Send Password Reset Link
                         </button>
                     </div>
 
                     <div class="d-md-flex justify-content-between mt-4">
 
                         <div>
-                            <a href="{{ route('admin.forget.password') }}" class="text-inherit fs-5">Forgot your password?</a>
+                            <a href="{{ route('admin.login') }}" class="text-inherit fs-5">Back to Login</a>
                         </div>
                     </div>
                 </div>
@@ -64,5 +53,6 @@ Login
         </div>
     </div>
 </div>
+
 
 @endsection
