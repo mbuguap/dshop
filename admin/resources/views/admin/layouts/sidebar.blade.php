@@ -1,6 +1,3 @@
-@php
-$route = Route::current()->getName();
-@endphp
 
 
 <div class="app-menu">
@@ -18,7 +15,7 @@ $route = Route::current()->getName();
 
 
         <li class="nav-item">
-          <a class="nav-link has-arrow {{ ($route ==  'admin.dashboard') ? 'active':  '' }}"
+          <a class="nav-link has-arrow {{ Route::is('admin.dashboard') ? 'active':  '' }}"
             href="{{ route('admin.dashboard') }}">
             <i data-feather="home" class="nav-icon me-2 icon-xxs">
             </i>
@@ -94,6 +91,52 @@ $route = Route::current()->getName();
           </div>
         </li>
 
+        <li class="nav-item">
+          <div class="navbar-heading">Settings</div>
+        </li>
+
+        <li class="nav-item">
+
+          <a class="nav-link collapsed has-arrow " href="#!" data-bs-toggle="collapse" data-bs-target="#navemailsPages"
+            aria-expanded="false" aria-controls="navemailsPages">
+            <i data-feather="user" class="nav-icon me-2 icon-xxs"> </i>
+            Emails
+          </a>
+
+          <div id="navemailsPages" class="collapse {{ Route::is('admin.email.configuration') || Route::is('admin.email.template') || Route::is('admin.add.email.template') ? 'show':  '' }}"
+            data-bs-parent="#sideNavbar">
+            <ul class="nav flex-column">
+
+
+              <li class="nav-item">
+                <a class="nav-link has-arrow {{ Route::is('admin.email.configuration') ? 'active':  '' }}"
+                  href="{{ route('admin.email.configuration') }}">
+                  Email Configuration
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link has-arrow {{ Route::is('admin.email.template') ? 'active':  '' }}"
+                  href="{{ route('admin.email.template') }}">
+                  Email Templates
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link has-arrow {{ Route::is('admin.add.email.template') ? 'active':  '' }}"
+                  href="{{ route('admin.add.email.template') }}">
+                  Add Email Template
+                </a>
+              </li>
+
+
+
+
+            </ul>
+          </div>
+        </li>
+
 
 
 
@@ -111,12 +154,12 @@ $route = Route::current()->getName();
             Profile
           </a>
 
-          <div id="navprofilePages" class="collapse {{ ($route ==  'admin.profile') ? 'show':  '' }}"
+          <div id="navprofilePages" class="collapse {{ Route::is('admin.profile') ? 'show':  '' }}"
             data-bs-parent="#sideNavbar">
             <ul class="nav flex-column">
 
               <li class="nav-item">
-                <a class="nav-link has-arrow {{ ($route ==  'admin.profile') ? 'active':  '' }}"
+                <a class="nav-link has-arrow {{ Route::is('admin.profile') ? 'active':  '' }}"
                   href="{{ route('admin.profile') }}">
                   Edit Profile
                 </a>
